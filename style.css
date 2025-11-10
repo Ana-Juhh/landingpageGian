@@ -88,6 +88,78 @@ form input, form select {
   background: #000f3a;
 }
 
+/* --- SEÇÃO PRODUTOS EM DESTAQUE --- */
+
+.produtos-destaque { font-family: Arial, sans-serif; padding: 50px 20px; background-color: #f8f9fa; }
+.produtos-destaque h2 { text-align:center; margin-bottom:32px; color:#333; font-weight:700; font-size:20px; letter-spacing:1px; }
+
+/* grid responsivo */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* card */
+.produto-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .18s ease, box-shadow .18s ease;
+  cursor: pointer; /* indica que é clicável */
+}
+.produto-card:hover { transform: translateY(-6px); box-shadow: 0 10px 26px rgba(0,0,0,0.12); }
+
+/* imagem */
+.card-imagem-wrapper { position: relative; }
+.card-imagem-wrapper img {
+  width:100%;
+  height:300px;            /* ajuste a altura como preferir (250~300 é comum) */
+  object-fit:cover;
+  display:block;
+}
+
+/* tag */
+.tag-lancamento {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #e0f2fe;
+  color: #0c54a8;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight:700;
+}
+
+/* conteúdo */
+.card-conteudo { padding: 18px; flex-grow:1; }
+.card-conteudo h3 { margin:0 0 8px 0; color:#111; font-size:1.05rem; }
+.card-localizacao { color:#667; font-size:0.9rem; margin-bottom:12px; }
+.card-descricao { color:#555; font-size:0.92rem; line-height:1.5; }
+
+/* botão whatsapp */
+.card-botao-wrapper { padding: 16px 18px 22px; text-align:center; }
+.btn-whatsapp {
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:#25D366; color:#fff; text-decoration:none; padding:12px 18px; border-radius:8px;
+  font-weight:700; transition:background .18s;
+}
+.btn-whatsapp:hover { background:#1EBE57; }
+
+/* responsividade */
+@media (max-width: 1000px) {
+  .cards-container { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .cards-container { grid-template-columns: 1fr; }
+  .card-imagem-wrapper img { height:200px; }
+}
 
 
 /* --- BIO --- */
@@ -274,8 +346,6 @@ form input, form select {
   }
 }
 
-
-
 /* --- CLIENTES SATISFEITOS --- */
 .clientes-satisfeitos {
   text-align: center;
@@ -304,82 +374,6 @@ form input, form select {
   object-fit: cover;
   border: 4px solid #fff; /* ✅ Borda branca fina estilo Instagram */
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
-
-
-
-
-/* --- SEÇÃO PRODUTOS EM DESTAQUE --- */
-
-.produtos-destaque { font-family: Arial, sans-serif; padding: 50px 20px; background-color: #f8f9fa; }
-.produtos-destaque h2 { text-align:center; margin-bottom:32px; color:#333; font-weight:700; font-size:14px; letter-spacing:1px; }
-
-/* grid responsivo */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* card */
-.produto-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform .18s ease, box-shadow .18s ease;
-  cursor: pointer; /* indica que é clicável */
-}
-.produto-card:hover { transform: translateY(-6px); box-shadow: 0 10px 26px rgba(0,0,0,0.12); }
-
-/* imagem */
-.card-imagem-wrapper { position: relative; }
-.card-imagem-wrapper img {
-  width:100%;
-  height:300px;            /* ajuste a altura como preferir (250~300 é comum) */
-  object-fit:cover;
-  display:block;
-}
-
-/* tag */
-.tag-lancamento {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: #e0f2fe;
-  color: #0c54a8;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight:700;
-}
-
-/* conteúdo */
-.card-conteudo { padding: 18px; flex-grow:1; }
-.card-conteudo h3 { margin:0 0 8px 0; color:#111; font-size:1.05rem; }
-.card-localizacao { color:#667; font-size:0.9rem; margin-bottom:12px; }
-.card-descricao { color:#555; font-size:0.92rem; line-height:1.5; }
-
-/* botão whatsapp */
-.card-botao-wrapper { padding: 16px 18px 22px; text-align:center; }
-.btn-whatsapp {
-  display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  background:#25D366; color:#fff; text-decoration:none; padding:12px 18px; border-radius:8px;
-  font-weight:700; transition:background .18s;
-}
-.btn-whatsapp:hover { background:#1EBE57; }
-
-/* responsividade */
-@media (max-width: 1000px) {
-  .cards-container { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .cards-container { grid-template-columns: 1fr; }
-  .card-imagem-wrapper img { height:200px; }
 }
 
 
