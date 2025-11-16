@@ -161,6 +161,25 @@ form input, form select {
   .card-imagem-wrapper img { height:200px; }
 }
 
+.card-icones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  padding: 0 18px 18px;
+}
+
+.card-icones div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #0b4c97;
+}
+
+.card-icones i {
+  font-size: 1rem;
+  color: #0b4c97;
+}
 
 /* --- BIO --- */
 .bio {
