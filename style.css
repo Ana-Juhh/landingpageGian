@@ -201,13 +201,14 @@ form input, form select {
 }
 
 .bio-box img {
-  border-radius: 48%; /* transforma em círculo */
-  width: 160px;        /* largura da imagem */
-  height: 160px;       /* altura da imagem */
+  border-radius: 8px;       /* leve arredondamento, não é mais círculo */
+  width: 230px;             /* aumenta a área da foto */
+  height: auto;             /* mantém proporção real da imagem */
   margin-right: 20px;
   border: 3px solid #fff;
-  object-fit: cover;   /* garante que a imagem preencha o círculo sem distorcer */
+  object-fit: contain;      /* mostra a foto inteira sem cortar */
 }
+
 
 .bio-box p {
   line-height: 1.6;
